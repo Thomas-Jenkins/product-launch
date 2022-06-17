@@ -1,11 +1,52 @@
 /* font @import */
+@import url(https://fonts.googleapis.com/css2?family=Anek+Malayalam:wght@200&display=swap);
 
 :root {
   /* css variables with theme colors,
     names have to start with "--" */
-  --color-1: #b9af9e;
+  --color-1: #369AC7;
+  --color-2: #728994;
+  --color-3: #5DF9D4;
+  --color-4: #FBA59B;
+  --color-5: #C7364B;
+}
+body{ 
+    background: var( --color-1); 
+    font-family: 'Anek Malayalam', sans-serif; 
+    color: var (--color-1);
+    } 
+
+#hero-image{
+    grid-area: image;
+
+    object-fit: cover;
+    height: 50vh;
+    width: 100vw;
+  }
+
+  #header {
+    grid-area: header;
+    padding: 0 60px
+    color: var(--color-3);
+    font-family: 'Anek Malayalam', sans-serif;
+    font-size: 3rem;
+    line-height: 1.25;
+  }
+
+  #lead {
+    grid-area: lead;
+    padding: 0 60px 60px 60px;
+    font-size:1.3rem;
+    line-height: 1.5;
+  }
+  
+p{
+  Margin: 10px;
+  border: 1px solid black;
+  padding: 20px;
+  
 }
 
-body {
-    
+img{
+width: 50%;
 }
