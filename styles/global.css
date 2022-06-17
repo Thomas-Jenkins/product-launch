@@ -23,11 +23,41 @@ body{
     height: 50vh;
     width: 100vw;
   }
+  @media (min-width: 900px) {
+    body {
+      /* take up the visible height of the "viewport" */
+      height: 100vh;
+  
+      /* Use CSS Grid */
+      display: grid;
+      /* Two columns wide, three rows long */
+      /* even split 50/50 */
+      grid-template-columns: 50% 50%;
+      /* auto fit content for first two, 
+         then give remaining space to third row */
+      grid-template-rows: auto auto 1fr;
+      /* This is a "picture" of where each element should go */
+      grid-template-areas:
+        'header  image'
+        'lead    image'
+        'name    image';
+      /* Default positioning: stretch horizontally, center vertically */
+      justify-items: stretch;
+      align-items: center;
+    }
+      #hero-image {
+        height: 100%;
+        max-width: 100%;
+
+      }
+    }
+  
 
   #header {
     grid-area: header;
-    padding: 0 60px
-    color: var(--color-3);
+    padding: 0 60px;
+    margin-left: auto;
+    color: var(--color-4);
     font-family: 'Anek Malayalam', sans-serif;
     font-size: 3rem;
     line-height: 1.25;
@@ -35,18 +65,59 @@ body{
 
   #lead {
     grid-area: lead;
+    margin-left: auto;
     padding: 0 60px 60px 60px;
     font-size:1.3rem;
     line-height: 1.5;
   }
-  
-p{
-  Margin: 10px;
-  border: 1px solid black;
-  padding: 20px;
-  
+
+  #leadp{
+    grid-area: lead;
+    margin-left: auto;
+    padding: 0 60px 60px 60px;
+    font-size:1.3rem;
+    line-height: 1.5;
+
+  }
+  #leadp span{
+    font-weight: bold;
+  }
+
+#sign_up_form {
+  grid-area: name;
+  width: 100%;
+  background: var(--color-2);
+  padding: 60px;
 }
 
-img{
-width: 50%;
+label, input, button {
+display: block;
+width: 100%;
+max-width: 450px;
+
+}
+
+label {
+  color: var(--color-5)
+  font-size: 1.3rem;
+  text-transform: uppercase;
+}
+
+input {
+  /* size up the input box */
+  height: 50px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding: 10px;
+  font-size: 1.2rem;
+}
+button {
+  /* Color and font settings for label */
+  /* Bright color for Call To Action (CTA) */
+  background: var(--sinopia);
+  color: var(--white);
+  border: 0;
+  padding: 20px;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 1.5rem;
 }
